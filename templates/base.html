@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
+    <meta name="author" content="{{ config.extra.author }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+
+    <!-- Feeds -->
+    {% if config.generate_feeds %}
+    {% for feed in config.feed_filenames %}
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path=feed) }}">
+    {% endfor %}
+    {% endif %}
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
+</head>
+<body>
+    <div class="site">
+        <nav class="site-nav">
+            <div class="nav-inner">
+                <a href="{{ config.base_url }}" class="nav-brand">{{ config.extra.author }}</a>
+                <div class="nav-links">
+                    {% for link in config.extra.nav_links %}
+                    <a href="{{ link.url }}">{{ link.label }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </nav>
+
+        <main class="site-main">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="{{ config.extra.github }}" target="_blank" rel="noopener">GitHub</a>
+                    <a href="{{ config.extra.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="mailto:{{ config.extra.email }}">Email</a>
+                </div>
+                <p>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

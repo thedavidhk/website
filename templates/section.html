@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} — {{ config.title }}{% endblock %}
+{% block description %}{{ section.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<div class="section-header">
+    <h1>{{ section.title }}</h1>
+    {% if section.description %}
+    <p>{{ section.description }}</p>
+    {% endif %}
+</div>
+
+{% if section.content %}
+<div class="prose">
+    {{ section.content | safe }}
+</div>
+{% endif %}
+
+<div class="project-list">
+    {% for page in section.pages %}
+    <div class="project-card">
+        <div class="project-card-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </div>
+        {% if page.description %}
+        <p class="project-card-desc">{{ page.description }}</p>
+        {% endif %}
+        {% if page.extra.tags %}
+        <div class="project-tags">
+            {% for tag in page.extra.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1 class="hero-title">{{ section.extra.hero_title | default(value=config.extra.author) }}</h1>
+    <p class="hero-subtitle">{{ section.extra.hero_subtitle | default(value=config.description) }}</p>
+    <div class="hero-summary prose">
+        {{ section.content | safe }}
+    </div>
+    <div class="hero-links">
+        <a href="/projects/" class="btn btn-primary">View Projects</a>
+        <a href="/about/" class="btn btn-outline">About Me</a>
+    </div>
+</section>
+{% endblock %}

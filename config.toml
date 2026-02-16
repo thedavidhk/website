@@ -1,0 +1,38 @@
+base_url = "https://david-herok.com"
+title = "David J. C. Herok"
+description = "Software Engineer — Backend, Systems, and Data Processing"
+default_language = "en"
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+minify_html = true
+taxonomies = [
+    { name = "tags", feed = true },
+]
+
+[markdown]
+smart_punctuation = true
+
+[markdown.highlighting]
+style = "inline"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[extra]
+author = "David J. C. Herok"
+github = "https://github.com/dherok"
+linkedin = "https://linkedin.com/in/david-herok"
+email = "hello@david-herok.com"
+
+# Navigation links shown in the header.
+# To enable the blog, add: { label = "Blog", url = "/blog/" }
+nav_links = [
+    { label = "About", url = "/about/" },
+    { label = "Projects", url = "/projects/" },
+]

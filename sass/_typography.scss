@@ -1,0 +1,127 @@
+@use "variables" as *;
+
+body {
+    font-family: $font-sans;
+    font-size: $text-base;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+h1 { font-size: $text-4xl; margin-bottom: $space-lg; }
+h2 { font-size: $text-3xl; margin-bottom: $space-md; }
+h3 { font-size: $text-2xl; margin-bottom: $space-md; }
+h4 { font-size: $text-xl;  margin-bottom: $space-sm; }
+
+// Prose — styles for Markdown-rendered content.
+.prose {
+    h2, h3, h4 {
+        margin-top: $space-2xl;
+    }
+
+    p {
+        margin-bottom: $space-md;
+    }
+
+    a {
+        color: $accent;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $accent-hover;
+        }
+    }
+
+    ul, ol {
+        margin-bottom: $space-md;
+        padding-left: $space-lg;
+    }
+
+    ul { list-style: disc; }
+    ol { list-style: decimal; }
+
+    li + li {
+        margin-top: $space-xs;
+    }
+
+    blockquote {
+        border-left: 3px solid $accent;
+        padding-left: $space-md;
+        margin: $space-lg 0;
+        font-style: italic;
+    }
+
+    code {
+        font-family: $font-mono;
+        font-size: 0.9em;
+        padding: 0.15em 0.35em;
+        border-radius: 4px;
+        background: $bg-light-subtle;
+    }
+
+    pre {
+        margin: $space-lg 0;
+        padding: $space-md;
+        border-radius: 8px;
+        overflow-x: auto;
+        background: $bg-light-subtle;
+        line-height: 1.5;
+
+        code {
+            padding: 0;
+            background: none;
+            font-size: $text-sm;
+        }
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid $border-light;
+        margin: $space-2xl 0;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+// Dark mode overrides for prose.
+@media (prefers-color-scheme: dark) {
+    .prose {
+        code {
+            background: $bg-dark-subtle;
+        }
+
+        pre {
+            background: $bg-dark-subtle;
+        }
+
+        hr {
+            border-color: $border-dark;
+        }
+    }
+}
+
+// Giallo (Zola syntax highlighter) required base styles.
+.giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+}
+
+.giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+}

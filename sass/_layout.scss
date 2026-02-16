@@ -1,0 +1,148 @@
+@use "variables" as *;
+
+// ── Root colors ─────────────────────────────────────────────────────────────
+body {
+    background: $bg-light;
+    color: $text-light;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: $bg-dark;
+        color: $text-dark;
+    }
+}
+
+// ── Page shell ──────────────────────────────────────────────────────────────
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-main {
+    flex: 1;
+    width: 100%;
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: $space-2xl $space-md;
+}
+
+// ── Navigation ──────────────────────────────────────────────────────────────
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: $nav-height;
+    background: $bg-light;
+    border-bottom: 1px solid $border-light;
+    backdrop-filter: blur(8px);
+    // Slight transparency so content scrolling under is hinted at.
+    background: rgba($bg-light, 0.92);
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba($bg-dark, 0.92);
+        border-color: $border-dark;
+    }
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $content-width;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 $space-md;
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: $text-lg;
+    color: inherit;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: $space-lg;
+}
+
+.nav-links a {
+    font-size: $text-sm;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: inherit;
+    transition: color $transition-fast;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $accent;
+        transition: width $transition-fast;
+    }
+
+    &:hover {
+        color: $accent;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+// ── Footer ──────────────────────────────────────────────────────────────────
+.site-footer {
+    border-top: 1px solid $border-light;
+    padding: $space-xl $space-md;
+    text-align: center;
+    font-size: $text-sm;
+    color: $text-light-muted;
+
+    @media (prefers-color-scheme: dark) {
+        border-color: $border-dark;
+        color: $text-dark-muted;
+    }
+
+    a {
+        color: $accent;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $accent-hover;
+        }
+    }
+}
+
+.footer-inner {
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: $space-lg;
+    margin-bottom: $space-sm;
+}
+
+// ── Responsive adjustments ──────────────────────────────────────────────────
+@media (max-width: 480px) {
+    .nav-links {
+        gap: $space-md;
+    }
+
+    h1 {
+        font-size: $text-3xl;
+    }
+}

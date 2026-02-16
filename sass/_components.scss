@@ -1,0 +1,300 @@
+@use "variables" as *;
+
+// ── Hero (home page) ───────────────────────────────────────────────────────
+.hero {
+    padding: $space-3xl 0 $space-2xl;
+}
+
+.hero-title {
+    font-size: $text-4xl;
+    margin-bottom: $space-sm;
+}
+
+.hero-subtitle {
+    font-size: $text-xl;
+    color: $text-light-muted;
+    margin-bottom: $space-xl;
+    font-weight: 400;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}
+
+.hero-summary {
+    font-size: $text-lg;
+    line-height: 1.8;
+    margin-bottom: $space-xl;
+    max-width: 600px;
+}
+
+.hero-links {
+    display: flex;
+    gap: $space-md;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: $space-sm $space-lg;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: $text-sm;
+    transition: background $transition-fast, color $transition-fast;
+}
+
+.btn-primary {
+    background: $accent;
+    color: #fff;
+
+    &:hover {
+        background: $accent-hover;
+    }
+}
+
+.btn-outline {
+    border: 1px solid $border-light;
+    color: inherit;
+
+    &:hover {
+        border-color: $accent;
+        color: $accent;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        border-color: $border-dark;
+
+        &:hover {
+            border-color: $accent;
+        }
+    }
+}
+
+// ── Project cards ───────────────────────────────────────────────────────────
+.project-list {
+    display: grid;
+    gap: $space-lg;
+}
+
+.project-card {
+    padding: $space-lg;
+    border: 1px solid $border-light;
+    border-radius: 8px;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+        border-color: $accent;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        border-color: $border-dark;
+
+        &:hover {
+            border-color: $accent;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+.project-card-title {
+    font-size: $text-xl;
+    font-weight: 600;
+    margin-bottom: $space-xs;
+    color: inherit;
+
+    a {
+        color: inherit;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+}
+
+.project-card-desc {
+    color: $text-light-muted;
+    margin-bottom: $space-md;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.15em 0.6em;
+    border-radius: 4px;
+    background: $bg-light-subtle;
+    color: $text-light-muted;
+    letter-spacing: 0.02em;
+
+    @media (prefers-color-scheme: dark) {
+        background: $bg-dark-subtle;
+        color: $text-dark-muted;
+    }
+}
+
+// ── Project detail ──────────────────────────────────────────────────────────
+.project-meta {
+    display: flex;
+    gap: $space-md;
+    margin-bottom: $space-xl;
+    flex-wrap: wrap;
+}
+
+.project-meta a {
+    color: $accent;
+    font-size: $text-sm;
+    font-weight: 500;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $accent-hover;
+    }
+}
+
+// ── Section header ──────────────────────────────────────────────────────────
+.section-header {
+    margin-bottom: $space-2xl;
+}
+
+.section-header p {
+    color: $text-light-muted;
+    font-size: $text-lg;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}
+
+// ── Skills list (about page) ────────────────────────────────────────────────
+.skills-group {
+    margin-bottom: $space-xl;
+}
+
+.skills-group h3 {
+    font-size: $text-lg;
+    margin-bottom: $space-sm;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+}
+
+// ── Blog listing ────────────────────────────────────────────────────────────
+.post-list {
+    display: grid;
+    gap: $space-lg;
+}
+
+.post-item {
+    padding-bottom: $space-lg;
+    border-bottom: 1px solid $border-light;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        border-color: $border-dark;
+    }
+}
+
+.post-date {
+    font-size: $text-sm;
+    color: $text-light-muted;
+    font-variant-numeric: tabular-nums;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}
+
+.post-title {
+    font-size: $text-xl;
+    font-weight: 600;
+    margin: $space-xs 0;
+
+    a {
+        color: inherit;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+}
+
+.post-excerpt {
+    color: $text-light-muted;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}
+
+// ── Blog post detail ────────────────────────────────────────────────────────
+.post-header {
+    margin-bottom: $space-2xl;
+}
+
+.post-header h1 {
+    margin-bottom: $space-sm;
+}
+
+.post-meta {
+    display: flex;
+    gap: $space-md;
+    font-size: $text-sm;
+    color: $text-light-muted;
+    flex-wrap: wrap;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}
+
+.post-tags {
+    display: flex;
+    gap: $space-xs;
+    margin-top: $space-xl;
+}
+
+// ── Taxonomy list page ──────────────────────────────────────────────────────
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+}
+
+.tag-list-item {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xs;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.tag-count {
+    font-size: 0.75rem;
+    color: $text-light-muted;
+
+    @media (prefers-color-scheme: dark) {
+        color: $text-dark-muted;
+    }
+}

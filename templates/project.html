@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<article>
+    <header class="section-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+        <p>{{ page.description }}</p>
+        {% endif %}
+    </header>
+
+    {% if page.extra.repo_url or page.extra.crates_url %}
+    <div class="project-meta">
+        {% if page.extra.repo_url %}
+        <a href="{{ page.extra.repo_url }}" target="_blank" rel="noopener">GitHub Repository &rarr;</a>
+        {% endif %}
+        {% if page.extra.crates_url %}
+        <a href="{{ page.extra.crates_url }}" target="_blank" rel="noopener">crates.io &rarr;</a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if page.extra.tags %}
+    <div class="project-tags" style="margin-bottom: 2rem;">
+        {% for tag in page.extra.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="prose">
+        {{ page.content | safe }}
+    </div>
+</article>
+{% endblock %}

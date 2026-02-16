@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Blog — {{ config.title }}{% endblock %}
+{% block description %}Blog posts by {{ config.extra.author }}{% endblock %}
+
+{% block content %}
+<div class="section-header">
+    <h1>{{ section.title }}</h1>
+    {% if section.description %}
+    <p>{{ section.description }}</p>
+    {% endif %}
+</div>
+
+<div class="post-list">
+    {% for page in paginator.pages %}
+    <div class="post-item">
+        <span class="post-date">{{ page.date | date(format="%B %e, %Y") }}</span>
+        <h2 class="post-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h2>
+        {% if page.description %}
+        <p class="post-excerpt">{{ page.description }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% if paginator.number_pagers > 1 %}
+<nav class="pagination">
+    {% if paginator.previous %}
+    <a href="{{ paginator.previous }}">&larr; Newer</a>
+    {% endif %}
+    {% if paginator.next %}
+    <a href="{{ paginator.next }}">Older &rarr;</a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endblock %}
