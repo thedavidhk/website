@@ -5,7 +5,7 @@ description = "A small story about tooling friction, a throwaway script, and how
 draft = false
 
 [taxonomies]
-tags = ["c3pg", "c++", "rust"]
+tags = ["c3pg", "c++", "rust", "cmake", "conan"]
 +++
 
 When I (have to) write C++, I often just want to *try something*.
@@ -66,7 +66,7 @@ That’s how c3pg started to become more than a quick test helper.
 
 ## What c3pg Actually Is
 
-Today, c3pg is a CLI tool that lets you:
+Today, [c3pg](/projects/c3pg/) is a CLI tool that lets you:
 
 * create a new C++ project,
 * declare dependencies in a `c3pg.toml`,

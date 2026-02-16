@@ -10,17 +10,61 @@ crates_url = "https://crates.io/crates/c3pg"
 tags = ["Rust", "C++", "Developer Tooling", "CLI"]
 +++
 
-**c3pg** brings Cargo-style project management to C++. It handles project scaffolding, builds, and common development tasks through a single CLI — replacing the boilerplate of manually configuring CMake, directory layouts, and compiler flags.
+c3pg is a small CLI tool that makes starting and managing C++ projects feel less heavy. It wraps CMake and Conan behind
+a Cargo-inspired interface and provides sensible defaults so you can focus on writing code instead of assembling build
+logic.
 
-## Why
+It’s opinionated. It’s evolving. And it grew out of personal frustration with tooling friction.
 
-Anyone who works in both Rust and C++ knows the gap in developer experience. Starting a new Rust project is one command. Starting a new C++ project is a maze of build system choices, directory conventions, and configuration files.
+#  Why It Exists
 
-c3pg closes that gap. It provides opinionated defaults for project structure and builds, so you can go from zero to a compiling project in seconds — and maintain that project without fighting the toolchain.
+If you’ve worked with both Rust and C++, you’ve probably felt the difference in workflow.
 
-## Features
+In Rust, starting a project is straightforward:
 
-- **Project scaffolding** — standard directory layout and build configuration from a single command
-- **Build management** — consistent build, run, and test commands without hand-written CMake or Makefiles
-- **Opinionated defaults** — sensible compiler settings and project structure out of the box
-- **Single binary** — written in Rust, distributed via [crates.io](https://crates.io/crates/c3pg), no runtime dependencies
+```
+cargo new
+cargo run
+cargo test
+```
+
+
+In C++, the first step often involves choosing (and configuring) a build system, deciding on directory layout, wiring up
+dependency management, and tweaking compiler flags.
+
+All of those tools are powerful — but they add ceremony.
+
+c3pg doesn’t replace CMake or Conan. It sits on top of them and standardizes the common case. The goal isn’t flexibility
+for every edge case. It’s reducing friction for everyday experimentation and small-to-medium projects.
+
+## What It Does
+
+Scaffolds new C++ projects with a consistent layout
+
+Manages dependencies via Conan through a simple c3pg.toml
+
+Provides unified build, run, and test commands
+
+Enables sanitizers and integrates common development tools
+
+Follows a Cargo-like command structure to minimize surprise
+
+Under the hood, the complexity is still there. c3pg just hides it behind conventions.
+
+## Current State
+
+c3pg works well for my own workflows, but it’s not a mature ecosystem tool.
+
+There are still rough edges.
+
+Most configuration is intentionally abstracted away.
+
+Advanced CMake and Conan customization is limited (for now).
+
+Future iterations will likely expose more of that customization while keeping the default path simple.
+
+If you try it and run into issues, I’d genuinely appreciate feedback — especially via GitHub.
+
+[View on GitHub](https://github.com/thedavidhk/c3pg)
+
+[Available on crates.io](https://crates.io/c3pg)
