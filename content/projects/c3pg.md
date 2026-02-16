@@ -1,6 +1,6 @@
 +++
 title = "c3pg"
-description = "A Cargo-inspired development suite for C++ projects."
+description = "A Cargo-inspired development suite for C++ projects, written in Rust."
 weight = 1
 template = "project.html"
 
@@ -10,17 +10,17 @@ crates_url = "https://crates.io/crates/c3pg"
 tags = ["Rust", "C++", "Developer Tooling", "CLI"]
 +++
 
-**c3pg** is a command-line tool that brings the ergonomics of Rust's Cargo to C++ development. If you've ever envied how easy it is to create, build, and manage Rust projects with Cargo, c3pg aims to provide a similar experience for C++.
+**c3pg** brings Cargo-style project management to C++. It handles project scaffolding, builds, and common development tasks through a single CLI — replacing the boilerplate of manually configuring CMake, directory layouts, and compiler flags.
 
-## Motivation
+## Why
 
-C++ tooling has historically been fragmented. Setting up a new project involves choosing and configuring a build system, creating directory structures, wiring up dependencies, and writing boilerplate. For someone who regularly works in both Rust and C++, the contrast in developer experience is stark.
+Anyone who works in both Rust and C++ knows the gap in developer experience. Starting a new Rust project is one command. Starting a new C++ project is a maze of build system choices, directory conventions, and configuration files.
 
-c3pg was born out of that frustration — a single tool to handle the common tasks of C++ project management with sensible defaults and minimal configuration.
+c3pg closes that gap. It provides opinionated defaults for project structure and builds, so you can go from zero to a compiling project in seconds — and maintain that project without fighting the toolchain.
 
-## Key Features
+## Features
 
-- **Project scaffolding** — create new C++ projects with a standard directory layout in one command
-- **Build management** — consistent build commands without writing CMake or Makefiles by hand
-- **Opinionated defaults** — sensible project structure and compiler settings out of the box
-- **Written in Rust** — fast, reliable, and distributed as a single binary via crates.io
+- **Project scaffolding** — standard directory layout and build configuration from a single command
+- **Build management** — consistent build, run, and test commands without hand-written CMake or Makefiles
+- **Opinionated defaults** — sensible compiler settings and project structure out of the box
+- **Single binary** — written in Rust, distributed via [crates.io](https://crates.io/crates/c3pg), no runtime dependencies

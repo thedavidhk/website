@@ -4,7 +4,7 @@ template = "index.html"
 
 [extra]
 hero_title = "David J. C. Herok"
-hero_subtitle = "Software Engineer — Backend, Systems, and Data Processing"
+hero_subtitle = "Software Engineer — Systems, Backend, and Architecture"
 +++
 
-I build high-performance backend services and data processing systems, primarily in Rust, C/C++, and Python. I care about clean abstractions, reliable systems, and tools that make developers' lives easier.
+I design and build backend services, data processing pipelines, and distributed systems in Rust, C/C++, and Python. I care most about the part that's hardest to get right: clean architecture that keeps large systems simple enough to change.

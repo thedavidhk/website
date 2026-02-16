@@ -1,27 +1,23 @@
 +++
 title = "About"
 template = "page.html"
-description = "Background, skills, and interests."
+description = "Software engineer specializing in backend systems, architecture, and data processing."
 path = "about"
 +++
 
 ## What I Do
 
-I'm a software engineer specializing in backend services and data processing systems. My day-to-day work involves designing and implementing high-performance, reliable systems — the kind of software that needs to process large volumes of data efficiently and correctly.
+My core work is in backend services, data processing, and microservice architecture — typically in **Rust**, **C/C++**, and **Python**. I've designed and built systems that handle high data volumes under strict correctness and performance requirements, from individual services to the interactions between them.
 
-My primary languages are **Rust** (my favorite), **C/C++**, and **Python**. I value code that is clear, well-tested, and maintainable over code that is merely clever.
+What I value most in software is clarity. Clean interfaces that hide complexity. Small surface areas that make large systems manageable. I'd rather remove code than add it — the best abstraction is often the one that lets you delete something.
+
+I use AI tools where they genuinely help, with the same scrutiny I'd apply to any dependency: useful when understood, dangerous when trusted blindly. The engineering judgment stays with the engineer.
 
 ## Background
 
-Before committing fully to software engineering, I studied economics and pursued a PhD focused on Financial Market Regulation. I chose to leave academia to follow my passion for building software — a decision I haven't regretted. That said, the analytical thinking and rigor from economics continue to serve me well.
+My path to software engineering came through economics. I completed graduate studies and pursued a PhD in Financial Market Regulation before deciding to commit fully to building software. That background still shapes how I work — reasoning about trade-offs, modeling constraints, and thinking in systems are as central to good architecture as they are to economic analysis.
 
-Until recently I also gave guest lectures at universities, which I genuinely enjoyed. Teaching has a way of deepening your own understanding, and I'd welcome an opportunity to mentor or teach again in the future — likely focused on software engineering this time, though economics still fascinates me.
-
-## Side Interests
-
-In my spare time I've spent a fair amount of time on **game development** — most recently with [Bevy](https://bevyengine.org/) and Rust, but also previously in C and C++. I've never shipped a game (yet), but the intersection of systems programming, real-time rendering, and creative problem-solving keeps pulling me back.
-
-I also build developer tooling — see [c3pg](/projects/c3pg/), a Cargo-inspired build tool for C++ projects.
+Outside of my day job, I build [developer tooling](/projects/c3pg/) and spend time in the Rust ecosystem, where I'm particularly drawn to the intersection of performance, safety, and ergonomics.
 
 ## Skills
 
@@ -41,10 +37,11 @@ I also build developer tooling — see [c3pg](/projects/c3pg/), a Cargo-inspired
 <h3>Domains</h3>
 <div class="skills-list">
 <span class="tag">Backend Services</span>
+<span class="tag">Microservice Architecture</span>
 <span class="tag">Data Processing</span>
 <span class="tag">Systems Programming</span>
+<span class="tag">Software Design</span>
 <span class="tag">Developer Tooling</span>
-<span class="tag">Game Development</span>
 </div>
 </div>
 
