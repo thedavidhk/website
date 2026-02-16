@@ -34,5 +34,6 @@ email = "hello@david-herok.com"
 # To enable the blog, add: { label = "Blog", url = "/blog/" }
 nav_links = [
     { label = "About", url = "/about/" },
+    { label = "Blog", url = "/blog/" },
     { label = "Projects", url = "/projects/" },
 ]
