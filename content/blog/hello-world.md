@@ -46,7 +46,7 @@ fn main() {
 
 ### Links
 
-Link to [another page on the site](/about/) or to an [external resource](https://www.getzola.org/).
+Link to [another page on the site](@/about.md) or to an [external resource](https://www.getzola.org/).
 
 ---
 

@@ -5,7 +5,7 @@ weight = 1
 template = "project.html"
 
 [extra]
-repo_url = "https://github.com/dherok/c3pg"
+repo_url = "https://github.com/thedavidhk/c3pg"
 crates_url = "https://crates.io/crates/c3pg"
 tags = ["Rust", "C++", "Developer Tooling", "CLI"]
 +++

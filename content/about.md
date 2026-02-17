@@ -25,7 +25,7 @@ Regulation before deciding to build systems instead of models. That background s
 trade-offs, modeling constraints, and thinking in systems are as central to good architecture as they are to economic
 analysis.
 
-Outside of my day job, I build developer tooling (like [c3pg](/projects/c3pg/)) and spend time in the Rust ecosystem.
+Outside of my day job, I build developer tooling (like [c3pg](@/projects/c3pg.md)) and spend time in the Rust ecosystem.
 I’m particularly drawn to the intersection of performance, safety, and ergonomics.
 
 I’m interested in the incentives behind systems — technical and organizational. Most complexity doesn’t come from code

@@ -66,7 +66,7 @@ That’s how c3pg started to become more than a quick test helper.
 
 ## What c3pg Actually Is
 
-Today, [c3pg](/projects/c3pg/) is a CLI tool that lets you:
+Today, [c3pg](@/projects/c3pg.md) is a CLI tool that lets you:
 
 * create a new C++ project,
 * declare dependencies in a `c3pg.toml`,

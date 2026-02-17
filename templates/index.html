@@ -8,8 +8,8 @@
         {{ section.content | safe }}
     </div>
     <div class="hero-links">
-        <a href="/projects/" class="btn btn-primary">View Projects</a>
-        <a href="/about/" class="btn btn-outline">About Me</a>
+        <a href="{{ get_url(path='projects') }}" class="btn btn-primary">View Projects</a>
+        <a href="{{ get_url(path='about') }}" class="btn btn-outline">About Me</a>
     </div>
 </section>
 {% endblock %}
