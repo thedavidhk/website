@@ -1,5 +1,5 @@
 base_url = "https://david-herok.com"
-title = "David J. C. Herok"
+title = "David Cardoso Herok"
 description = "Software Engineer — Backend, Systems, and Data Processing"
 default_language = "en"
 compile_sass = true
@@ -25,13 +25,12 @@ taxonomies = "on"
 anchors = "on"
 
 [extra]
-author = "David J. C. Herok"
-github = "https://github.com/dherok"
-linkedin = "https://linkedin.com/in/david-herok"
-email = "hello@david-herok.com"
+author = "David Cardoso Herok"
+github = "https://github.com/thedavidhk"
+linkedin = "https://www.linkedin.com/in/david-herok-7167411a1/"
+email = "herok.davidj@gmail.com"
 
 # Navigation links shown in the header.
-# To enable the blog, add: { label = "Blog", url = "/blog/" }
 nav_links = [
     { label = "About", url = "/about/" },
     { label = "Blog", url = "/blog/" },

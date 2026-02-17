@@ -26,8 +26,15 @@ jobs:
           ZOLA_VERSION="0.22.1"
           curl -sL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar xz -C /usr/local/bin
 
+      # Detect the GitHub Pages URL so we can override base_url at build time.
+      # Once you point a custom domain (e.g. david-herok.com) at this Pages site,
+      # you can remove the --base-url flag and just use config.toml's base_url.
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build site
-        run: zola build
+        run: zola build --base-url "${{ steps.pages.outputs.base_url }}"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
