@@ -7,9 +7,10 @@ path = "about"
 
 ## What I Do
 
-I build backend systems — usually in Rust, C/C++, and Python — with a focus on correctness, performance, and keeping
-complexity under control. I’ve worked on systems that handle high data volumes under strict correctness and performance
-constraints — from single services to the architecture that ties them together.
+I build backend systems — primarily in Rust, C/C++, and Python — with a focus on correctness, performance, and managing
+complexity. As a library developer, I design and implement APIs with an emphasis on clarity, simplicity, and long-term
+maintainability. I’ve worked on systems handling large data volumes under strict correctness and performance
+requirements — from standalone services to the abstractions that tie them together.
 
 What I value most in software is clarity. Clean interfaces that hide complexity. Small surface areas that make large
 systems manageable. I'd rather remove code than add it — the best abstraction is often the one that lets you delete
