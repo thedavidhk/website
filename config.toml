@@ -26,6 +26,8 @@ anchors = "on"
 
 [extra]
 author = "David Cardoso Herok"
+profile_image = "/images/profile.webp"
+profile_image_alt = "Portrait of David Cardoso Herok"
 github = "https://github.com/thedavidhk"
 linkedin = "https://www.linkedin.com/in/david-herok-7167411a1/"
 email = "herok.davidj@gmail.com"

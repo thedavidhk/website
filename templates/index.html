@@ -2,14 +2,29 @@
 
 {% block content %}
 <section class="hero">
-    <h1 class="hero-title">{{ section.extra.hero_title | default(value=config.extra.author) }}</h1>
-    <p class="hero-subtitle">{{ section.extra.hero_subtitle | default(value=config.description) }}</p>
-    <div class="hero-summary prose">
-        {{ section.content | safe }}
-    </div>
-    <div class="hero-links">
-        <a href="{{ get_url(path='projects') }}" class="btn btn-primary">View Projects</a>
-        <a href="{{ get_url(path='about') }}" class="btn btn-outline">About Me</a>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ section.extra.hero_title | default(value=config.extra.author) }}</h1>
+            <p class="hero-subtitle">{{ section.extra.hero_subtitle | default(value=config.description) }}</p>
+            <div class="hero-summary prose">
+                {{ section.content | safe }}
+            </div>
+            <div class="hero-links">
+                <a href="{{ get_url(path='projects') }}" class="btn btn-primary">View Projects</a>
+                <a href="{{ get_url(path='about') }}" class="btn btn-outline">About Me</a>
+            </div>
+        </div>
+        {% if config.extra.profile_image %}
+        <img
+            class="hero-avatar"
+            src="{{ get_url(path=config.extra.profile_image) }}"
+            alt="{{ config.extra.profile_image_alt | default(value=config.extra.author) }}"
+            width="160"
+            height="160"
+            loading="eager"
+            decoding="async"
+        >
+        {% endif %}
     </div>
 </section>
 {% endblock %}
